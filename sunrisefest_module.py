@@ -93,13 +93,15 @@ def plot_correlation_interactive(tau, Rxy, title = None):
     t_peaks = [tau[i] for i in indices]
     print(f'Peaks found at {t_peaks}')
     
-    fig = go.FigureWidget([go.Scatter(x=tau, y=Rxy, mode='lines'),
-                          go.Scatter(x=t_peaks,
-                                     y=R_peaks,
-                                    mode='markers',
-                                    marker=dict(size=8,color='red',symbol='cross'))])
-    fig.layout.title = title
-    fig.show()
+    # Commented out this code to prevent nbformat timeout error of 4 seconds 
+    #
+    #fig = go.FigureWidget([go.Scatter(x=tau, y=Rxy, mode='lines'),
+    #                      go.Scatter(x=t_peaks,
+    #                                 y=R_peaks,
+    #                                mode='markers',
+    #                                marker=dict(size=8,color='red',symbol='cross'))])
+    #fig.layout.title = title
+    #fig.show()
     
     return R_peaks, t_peaks
 
